@@ -1,55 +1,55 @@
 # sudo PYTHONPATH=".:build/lib.linux-armv7l-2.7" python examples/MainAnother.py
 
-#Import the 'functions_library' which animates the LEDs in various ways.
+# Import the 'functions_library' which animates the LEDs in various ways.
 from function_library import *
-import time 
+import time
 
 tStartTime = 0
 tEndTime = 0
+test = 111
 
 
-#Main program logic:
+# Main program logic:
 if __name__ == '__main__':
-        #Process arguments
-        opt_parse()
-        #Create NeoPixel object with appropriate configuration.
-        strip = Adafruit_NeoPixel(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, LED_BRIGHTNESS, LED_CHANNEL, LED_STRIP)
-        #Intialize the library (must be called once before other functions).
-        strip.begin()
+    # Process arguments
+    opt_parse()
+    # Create NeoPixel object with appropriate configuration.
+    strip = Adafruit_NeoPixel(LED_COUNT, LED_PIN, LED_FREQ_HZ,
+                              LED_DMA, LED_INVERT, LED_BRIGHTNESS, LED_CHANNEL, LED_STRIP)
+    # Intialize the library (must be called once before other functions).
+    strip.begin()
 
-        print ('Press Ctrl-C to quit.')
-        #while True:
-        
-        
-        
-        # blau
-        #SetAll( strip, Color (0, 000, 255))
-        #strip.show()
-        #time.sleep(10)
+    print('Press Ctrl-C to quit.')
+    # while True:
 
-        # gruen
-        SetAll( strip, Color (000, 255, 000))
-        strip.show()
-        time.sleep(10)
-        
-        # rot
-        SetAll( strip, Color (255, 000, 000))
-        strip.show()
-        time.sleep(10)
+    # blau
+    #SetAll( strip, Color (0, 000, 255))
+    # strip.show()
+    # time.sleep(10)
 
-        for i in range (0, 255):
-          strip.setBrightness(i)
-          time.sleep(0.2)
-        
-        #Aus / schwarz
-        SetAll( strip, Color (256, 256, 256))
-        strip.show()
+    # gruen
+    SetAll(strip, Color(000, 255, 000))
+    strip.show()
+    time.sleep(10)
 
-        time.sleep(10)
-        
-        strip._cleanup()
-        
-            
+    # rot
+    SetAll(strip, Color(255, 000, 000))
+    strip.show()
+    time.sleep(10)
+
+    for i in range(0, 255):
+        strip.setBrightness(i)
+        time.sleep(0.2)
+
+    #Aus / schwarz
+    SetAll(strip, Color(256, 256, 256))
+    strip.show()
+
+    time.sleep(10)
+
+    strip._cleanup()
+
+
 """
 #List of functions:
 		FadeRGB(strip)
@@ -80,4 +80,4 @@ if __name__ == '__main__':
 		Clock2(strip, True)
 		FillDownRandom(strip, 0, .1, 1, .2)
 #		RandomColors(strip, .1)
-"""        
+"""
