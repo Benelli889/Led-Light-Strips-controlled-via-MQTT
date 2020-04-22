@@ -1,0 +1,5 @@
+{
+    "git.allowForcePush": true,
+    "github.allowUnsafeSSL": true,
+    "github.customPullRequestTitle": true
+}
