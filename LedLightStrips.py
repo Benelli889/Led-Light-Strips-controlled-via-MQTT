@@ -1,13 +1,15 @@
+# -*- coding: utf-8 -*-
 # sudo PYTHONPATH=".:build/lib.linux-armv7l-2.7" python examples/MainAnother.py
 
-# Import the 'functions_library' which animates the LEDs in various ways.
-from function_library import *
+import os
 import time
+import paho.mqtt.client as mqtt
+from threading import Thread
+from MQTT_Client import MqttHandler
+from function_library import *
 
 tStartTime = 0
 tEndTime = 0
-test = 1111
-
 
 # Main program logic:
 if __name__ == '__main__':
@@ -22,10 +24,11 @@ if __name__ == '__main__':
     print('Press Ctrl-C to quit.')
     # while True:
 
-    # blau
-    #SetAll( strip, Color (0, 000, 255))
-    # strip.show()
-    # time.sleep(10)
+    blau
+    SetAll(strip, Color(0, 000, 255))
+
+    strip.show()
+    time.sleep(10)
 
     # gruen
     SetAll(strip, Color(000, 255, 000))
@@ -37,47 +40,14 @@ if __name__ == '__main__':
     strip.show()
     time.sleep(10)
 
-    for i in range(0, 255):
-        strip.setBrightness(i)
-        time.sleep(0.2)
+    # for i in range(0, 255):
+    #    strip.setBrightness(i)
+    #    time.sleep(0.2)
 
     #Aus / schwarz
     SetAll(strip, Color(256, 256, 256))
     strip.show()
 
-    time.sleep(10)
+    time.sleep(5)
 
     strip._cleanup()
-
-
-"""
-#List of functions:
-		FadeRGB(strip)
-		FadeInOut(strip, 255, 255, 255)
-		Strobe(strip, 255, 255, 255, 5, .5, 3)
-		Cylon(strip, 255, 0, 0, 3, .1, .5)
-		Twinkle(strip, 255, 0, 0, 8, .1, False)
-		TwinkleRandom(strip, 8, .1, False)
-		Sparkle(strip, 255, 255, 255, 0)
-		SnowSparkle(strip, 10, 10, 10, .1, random.uniform(0, .5))
-		RunningLights(strip, 255, 255, 255, .25)
-		ColorWipe(strip, 255, 0, 0, .02)
-		ColorWipeReverse(strip, 0, 255, 0, .02)
-		Rainbow(strip, 0)
-		RainbowCycle(strip, 5, 0)
-		ColorChase(strip, 0, 0, 255, .02)
-		ColorChaseReverse(strip, 0, 255, 0, .02)
-		TheaterChase(strip, 255, 0, 0, .2, 10)
-		TheaterChaseRainbow(strip, .1)
-		MeteorRain(strip, 255, 0, 0, 5, 64, True, .1)
-		NewKitt(strip, 255, 0, 0, 8, .01, .05)
-		Fire(strip, Heat, 75, 150, .015)
-		BouncingBalls(strip, 255, 0, 0, 3)
-		BouncingBallsRGB(strip, 3, [[255, 0, 0], [0, 255, 0], [0, 0, 255]])
-		HalloweenEyes(strip, 255, 0, 0, 1, 4, True, random.randint(5, 50), random.uniform(.01, .2), random.randrange(1, 3))
-		MorseCode(strip, 255, 255, 255, 'SOS. This is a test.', .15)
-		Clock1(strip)
-		Clock2(strip, True)
-		FillDownRandom(strip, 0, .1, 1, .2)
-#		RandomColors(strip, .1)
-"""
