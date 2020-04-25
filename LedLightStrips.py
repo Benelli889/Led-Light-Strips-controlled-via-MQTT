@@ -10,7 +10,7 @@ from function_library import *
 
 tStartTime = 0
 tEndTime = 0
-Datum = "25-04-2020#09:55"
+Datum = "25-04-2020##09:55"
 
 # Main program logic:
 if __name__ == '__main__':
