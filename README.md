@@ -3,7 +3,7 @@
 Led-Light-Strips on/off via MQTT
 
 #crontab -l
-   -- changed to --
+   <- changed to ->
 #sudo crontab -l
 
 @reboot  bash  /home/pi/rpi_ws281x/python/examples/LedLightStrips.sh
